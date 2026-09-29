@@ -3,3 +3,6 @@
 A launcher that looks like the Renault MediaNav Evolution interface in the Clio/Captur/Sandero etc..
 
 AI was used in the making of this launcher.
+
+Tested on:
+Ruancheng Rockchip RK3326 Headunit
