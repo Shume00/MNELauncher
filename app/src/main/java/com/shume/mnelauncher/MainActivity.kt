@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 
         // --- MEDIA BUTTON SETUP ---
         btnMedia.setOnClickListener {
-            val targetApp = getSavedApp("BTN_MEDIA", "com.spotify.music")
+            val targetApp = getSavedApp("BTN_MEDIA", "com.example.music")
             launchApp(targetApp)
         }
 
@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnNav.setOnClickListener {
-            val targetApp = getSavedApp("BTN_NAV", "com.google.android.apps.maps")
+            val targetApp = getSavedApp("BTN_NAV", "com.example.maps")
             launchApp(targetApp)
         }
 
@@ -116,12 +116,22 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnSettings.setOnClickListener {
-            val targetApp = getSavedApp("BTN_SETTINGS", "com.android.settings")
+            val targetApp = getSavedApp("BTN_SETTINGS", "com.example.settings")
             launchApp(targetApp)
         }
 
         btnSettings.setOnLongClickListener {
             showAppPicker("BTN_SETTINGS")
+            true
+        }
+
+        btnAndroidAuto.setOnClickListener {
+            val targetApp = getSavedApp("BTN_ANDROID", "com.example.androidauto")
+            launchApp(targetApp)
+        }
+
+        btnAndroidAuto.setOnLongClickListener {
+            showAppPicker("BTN_ANDROID")
             true
         }
 
