@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.shume.mnelauncher">
+
+    <!-- Permission needed to query installed apps (Android 11+) -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="Medianav Launcher"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity
+                android:name=".MainActivity"
+                android:exported="true"
+                android:launchMode="singleTask"
+                android:stateNotNeeded="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <!-- This line lets Android Studio launch it normally -->
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <!-- These lines allow it to be set as the default car launcher -->
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
