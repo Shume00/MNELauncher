@@ -1,4 +1,5 @@
 package com.shume.mnelauncher
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -47,19 +48,20 @@ class MainActivity : AppCompatActivity() {
         val rootLayout = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.rootLayout)
         val textClock = findViewById<TextClock>(R.id.textClock)
         val btnAndroidAuto = findViewById<View>(R.id.bottomBar)
+        val btnAndroidAutoText = findViewById<TextView>(R.id.btnAndroidAutoText)
 
         val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         var isDarkMode = prefs.getBoolean("IS_DARK_MODE", true)
-        applyTheme(isDarkMode, rootLayout, btnThemeToggle, btnRadioText, btnMediaText, btnPhoneText, btnEcoText, btnNavText, btnSettingsText, textClock)
+        applyTheme(isDarkMode, rootLayout, btnThemeToggle, btnRadioText, btnMediaText, btnPhoneText, btnEcoText, btnNavText, btnSettingsText, textClock, btnAndroidAuto, btnAndroidAutoText)
 
         btnThemeToggle.setOnClickListener {
             isDarkMode = !isDarkMode
 
             // Save the new state
-            prefs.edit { putBoolean("IS_DARK_MODE", isDarkMode) }
+            prefs.edit { putBoolean("IS_DARK_MODE", isDarkMode).apply() }
 
             // Apply the new colors
-            applyTheme(isDarkMode, rootLayout, btnThemeToggle, btnRadioText, btnMediaText, btnPhoneText, btnEcoText, btnNavText, btnSettingsText, textClock)
+            applyTheme(isDarkMode, rootLayout, btnThemeToggle, btnRadioText, btnMediaText, btnPhoneText, btnEcoText, btnNavText, btnSettingsText, textClock, btnAndroidAuto, btnAndroidAutoText)
         }
 
         // --- RADIO BUTTON SETUP ---
@@ -137,7 +139,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun applyTheme(isDark: Boolean, rootLayout: androidx.constraintlayout.widget.ConstraintLayout, btnThemeToggle: android.widget.ImageView, btnRadioText: android.widget.TextView, btnMediaText: android.widget.TextView, btnPhoneText: android.widget.TextView, btnEcoText: android.widget.TextView, btnNavText: android.widget.TextView, btnSettingsText: android.widget.TextView, textClock: android.widget.TextClock) {
+    private fun applyTheme(isDark: Boolean, rootLayout: androidx.constraintlayout.widget.ConstraintLayout, btnThemeToggle: android.widget.ImageView, btnRadioText: android.widget.TextView, btnMediaText: android.widget.TextView, btnPhoneText: android.widget.TextView, btnEcoText: android.widget.TextView, btnNavText: android.widget.TextView, btnSettingsText: android.widget.TextView, textClock: android.widget.TextClock, btnAndroidAuto: android.view.View, btnAndroidAutoText: android.widget.TextView) {
         if (isDark) {
             btnThemeToggle.setImageResource(R.drawable.ic_moon)
             btnThemeToggle.setColorFilter("#E0E0E0".toColorInt())
@@ -149,6 +151,8 @@ class MainActivity : AppCompatActivity() {
             btnNavText.setTextColor("#E0E0E0".toColorInt())
             btnSettingsText.setTextColor("#E0E0E0".toColorInt())
             textClock.setTextColor("#E0E0E0".toColorInt())
+            btnAndroidAutoText.setTextColor("#E0E0E0".toColorInt())
+            btnAndroidAuto.setBackgroundResource(R.drawable.bg_android_auto_dark)
         } else {
             btnThemeToggle.setImageResource(R.drawable.ic_sun)
             btnThemeToggle.setColorFilter("#000000".toColorInt())
@@ -160,6 +164,8 @@ class MainActivity : AppCompatActivity() {
             btnNavText.setTextColor("#000000".toColorInt())
             btnSettingsText.setTextColor("#000000".toColorInt())
             textClock.setTextColor("#000000".toColorInt())
+            btnAndroidAutoText.setTextColor("#000000".toColorInt())
+            btnAndroidAuto.setBackgroundResource(R.drawable.bg_android_auto_light)
         }
     }
 
