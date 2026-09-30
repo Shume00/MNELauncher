@@ -5,7 +5,7 @@
         android:id="@+id/rootLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000">
+        android:background="@drawable/home_bg">
 
     <!-- Top Status Bar Area -->
     <LinearLayout
@@ -31,7 +31,6 @@
                 android:focusable="true"
                 app:tint="#FFFFFF" />
 
-        <!-- Spacer to push the clock to the far right -->
         <Space
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -62,228 +61,175 @@
             app:layout_constraintTop_toBottomOf="@id/topBar"
             app:layout_constraintBottom_toTopOf="@id/bottomBar">
 
-        <!-- Button 1: Radio -->
-        <LinearLayout
+        <!-- Button 1: Radio (Updated with your selector) -->
+        <FrameLayout
                 android:id="@+id/btnRadio"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_radio"
                 android:clickable="true"
-                android:focusable="true"
-                android:gravity="center">
+                android:focusable="true">
 
-            <!-- The Icon: Scales automatically to fill space -->
+            <!-- The Icon: Fills the entire grid cell -->
             <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_medianav_radio"
-                    android:scaleType="fitCenter"
-                    android:paddingTop="16dp"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp" />
+                    android:layout_height="match_parent"
+                    android:src="@drawable/selector_radio"
+                    android:scaleType="fitXY" />
 
-            <!-- The Text -->
+            <!-- The Text: Floats over the image at the bottom center -->
             <TextView
                     android:id="@+id/btnRadioText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
                     android:text="Radio"
                     android:textColor="#FFFFFF"
                     android:textSize="28sp"
-                    android:paddingTop="8dp"
                     android:paddingBottom="12dp" />
-        </LinearLayout>
+        </FrameLayout>
 
-        <!-- Button 2: Media -->
-        <LinearLayout
+        <!-- Button 2: Media (Prepared for selector_media) -->
+        <FrameLayout
                 android:id="@+id/btnMedia"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_media"
                 android:clickable="true"
-                android:focusable="true"
-                android:gravity="center">
+                android:focusable="true">
 
-            <!-- The Icon: Scales automatically to fill space -->
             <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_medianav_media"
-                    android:scaleType="fitCenter"
-                    android:paddingTop="16dp"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp" />
+                    android:layout_height="match_parent"
+                    android:src="@drawable/selector_media"
+                    android:scaleType="fitXY"/>
 
-            <!-- The Text -->
             <TextView
                     android:id="@+id/btnMediaText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
                     android:text="Media"
                     android:textColor="#FFFFFF"
                     android:textSize="28sp"
-                    android:paddingTop="8dp"
                     android:paddingBottom="12dp" />
-        </LinearLayout>
+        </FrameLayout>
 
-        <!-- Button 3: Phone -->
-        <LinearLayout
+        <!-- Button 3: Phone (Prepared for selector_phone) -->
+        <FrameLayout
                 android:id="@+id/btnPhone"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_phone"
                 android:clickable="true"
-                android:focusable="true"
-                android:gravity="center">
+                android:focusable="true">
 
-            <!-- The Icon: Scales automatically to fill space -->
             <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_medianav_phone"
-                    android:scaleType="fitCenter"
-                    android:paddingTop="16dp"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp" />
+                    android:layout_height="match_parent"
+                    android:src="@drawable/selector_phone"
+                    android:scaleType="fitXY" />
 
-            <!-- The Text -->
             <TextView
                     android:id="@+id/btnPhoneText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
                     android:text="Phone"
                     android:textColor="#FFFFFF"
                     android:textSize="28sp"
-                    android:paddingTop="8dp"
                     android:paddingBottom="12dp" />
-        </LinearLayout>
+        </FrameLayout>
 
-        <!-- Button 4: Driving Eco2 -->
-        <LinearLayout
+        <!-- Button 4: Driving Eco2 (Prepared for selector_eco) -->
+        <FrameLayout
                 android:id="@+id/btnEco"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_eco"
                 android:clickable="true"
-                android:focusable="true"
-                android:gravity="center">
+                android:focusable="true">
 
-            <!-- The Icon: Scales automatically to fill space -->
             <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_medianav_eco"
-                    android:scaleType="fitCenter"
-                    android:paddingTop="16dp"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp" />
+                    android:layout_height="match_parent"
+                    android:src="@drawable/selector_vehicle"
+                    android:scaleType="fitXY"/>
 
-            <!-- The Text -->
             <TextView
                     android:id="@+id/btnEcoText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Driving Eco\u00b2"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:text="Vehicle"
                     android:textColor="#FFFFFF"
                     android:textSize="28sp"
-                    android:paddingTop="8dp"
                     android:paddingBottom="12dp" />
-        </LinearLayout>
+        </FrameLayout>
 
-        <!-- Button 5: Nav -->
-        <LinearLayout
+        <!-- Button 5: Nav (Prepared for selector_nav) -->
+        <FrameLayout
                 android:id="@+id/btnNav"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_nav"
                 android:clickable="true"
-                android:focusable="true"
-                android:gravity="center">
+                android:focusable="true">
 
-            <!-- The Icon: Scales automatically to fill space -->
             <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_medianav_nav"
-                    android:scaleType="fitCenter"
-                    android:paddingTop="16dp"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp" />
+                    android:layout_height="match_parent"
+                    android:src="@drawable/selector_navi"
+                    android:scaleType="fitXY"/>
 
-            <!-- The Text -->
             <TextView
                     android:id="@+id/btnNavText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
                     android:text="Nav"
                     android:textColor="#FFFFFF"
                     android:textSize="28sp"
-                    android:paddingTop="8dp"
                     android:paddingBottom="12dp" />
-        </LinearLayout>
+        </FrameLayout>
 
-
-        <!-- Button 6: Settings -->
-        <LinearLayout
+        <!-- Button 6: Settings (Prepared for selector_settings) -->
+        <FrameLayout
                 android:id="@+id/btnSettings"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_settings"
                 android:clickable="true"
-                android:focusable="true"
-                android:gravity="center">
+                android:focusable="true">
 
-            <!-- The Icon: Scales automatically to fill space -->
             <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_medianav_settings"
-                    android:scaleType="fitCenter"
-                    android:paddingTop="16dp"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp" />
+                    android:layout_height="match_parent"
+                    android:src="@drawable/selector_setting"
+                    android:scaleType="fitXY"/>
 
-            <!-- The Text -->
             <TextView
                     android:id="@+id/btnSettingsText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
                     android:text="Settings"
                     android:textColor="#FFFFFF"
                     android:textSize="28sp"
-                    android:paddingTop="8dp"
                     android:paddingBottom="12dp" />
-        </LinearLayout>
+        </FrameLayout>
 
     </GridLayout>
 

@@ -32,12 +32,12 @@ class MainActivity : AppCompatActivity() {
             controller.systemBarsBehavior = androidx.core.view.WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
 
-        val btnRadio = findViewById<LinearLayout>(R.id.btnRadio)
-        val btnMedia = findViewById<LinearLayout>(R.id.btnMedia)
-        val btnPhone = findViewById<LinearLayout>(R.id.btnPhone)
-        val btnEco = findViewById<LinearLayout>(R.id.btnEco)
-        val btnNav = findViewById<LinearLayout>(R.id.btnNav)
-        val btnSettings = findViewById<LinearLayout>(R.id.btnSettings)
+        val btnRadio = findViewById<View>(R.id.btnRadio)
+        val btnMedia = findViewById<View>(R.id.btnMedia)
+        val btnPhone = findViewById<View>(R.id.btnPhone)
+        val btnEco = findViewById<View>(R.id.btnEco)
+        val btnNav = findViewById<View>(R.id.btnNav)
+        val btnSettings = findViewById<View>(R.id.btnSettings)
         val btnRadioText = findViewById<TextView>(R.id.btnRadioText)
         val btnMediaText = findViewById<TextView>(R.id.btnMediaText)
         val btnPhoneText = findViewById<TextView>(R.id.btnPhoneText)
