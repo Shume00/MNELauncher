@@ -5,7 +5,19 @@
         android:id="@+id/rootLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/home_bg">
+        android:background="@drawable/home_bg_dark">
+
+    <ImageView
+            android:id="@+id/topIndiLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/common_indi_line"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:translationY="-4dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Top Status Bar Area -->
     <LinearLayout
@@ -21,9 +33,10 @@
         <!-- Light/Dark Mode Toggle Button -->
         <ImageView
                 android:id="@+id/btnThemeToggle"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="10dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="75dp"
+                android:layout_marginTop="15dp"
                 android:src="@drawable/ic_moon"
                 android:contentDescription="Toggle Theme"
                 android:background="?attr/selectableItemBackgroundBorderless"
@@ -42,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
                 android:textSize="48sp"
+                android:translationY="-5dp"
                 android:format24Hour="HH:mm" />
     </LinearLayout>
 

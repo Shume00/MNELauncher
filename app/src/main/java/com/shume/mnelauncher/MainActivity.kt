@@ -143,7 +143,7 @@ class MainActivity : AppCompatActivity() {
         if (isDark) {
             btnThemeToggle.setImageResource(R.drawable.ic_moon)
             btnThemeToggle.setColorFilter("#E0E0E0".toColorInt())
-            rootLayout.setBackgroundColor("#000000".toColorInt())
+            rootLayout.setBackgroundResource(R.drawable.home_bg_dark)
             btnRadioText.setTextColor("#E0E0E0".toColorInt())
             btnMediaText.setTextColor("#E0E0E0".toColorInt())
             btnPhoneText.setTextColor("#E0E0E0".toColorInt())
@@ -156,7 +156,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             btnThemeToggle.setImageResource(R.drawable.ic_sun)
             btnThemeToggle.setColorFilter("#000000".toColorInt())
-            rootLayout.setBackgroundColor("#E0E0E0".toColorInt())
+            rootLayout.setBackgroundResource(R.drawable.home_bg_light)
             btnRadioText.setTextColor("#000000".toColorInt())
             btnMediaText.setTextColor("#000000".toColorInt())
             btnPhoneText.setTextColor("#000000".toColorInt())
